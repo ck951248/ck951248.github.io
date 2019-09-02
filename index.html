@@ -47,7 +47,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>My TiddlyWiki — a non-linear personal web notebook</title>
+<title>飆機器人wiki — 一群奇耙工程師在幹很奇耙的事</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
 
 <!--~~ Raw markup ~~-->
@@ -149,11 +149,23 @@ Error message and password prompt
 
 <li>$:/isEncrypted</li>
 
+<li>$:/SiteSubtitle</li>
+
+<li>$:/SiteTitle</li>
+
 <li>$:/state/tab/moresidebar-1850697562</li>
 
 <li>$:/state/tab/sidebar--595412856</li>
 
+<li>$:/state/toc/TableOfContents-Arduino--118161433</li>
+
 <li>$:/state/toc/TableOfContents-New Tiddler 2--118161433</li>
+
+<li>$:/state/toc/TableOfContents-New Tiddler 2-497309061</li>
+
+<li>$:/state/toc/TableOfContents/Arduino-開發板--118161433</li>
+
+<li>$:/state/toc/TableOfContents/Arduino-感測器--118161433</li>
 
 <li>$:/StoryList</li>
 
@@ -163,13 +175,29 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>亮度、壓力感測</li>
+
+<li>氣體感測</li>
+
+<li>開發板</li>
+
+<li>感測器</li>
+
+<li>溫溼度感測</li>
+
+<li>關於我們</li>
+
+<li>Arduino</li>
+
 <li>GettingStarted</li>
 
-<li>New Tiddler</li>
+<li>Mega2560</li>
 
-<li>New Tiddler 2</li>
+<li>Raspberry Pi 3B+/4B</li>
 
 <li>TableOfContents</li>
+
+<li>UNO</li>
 
 </ul>
 </p>
@@ -9374,9 +9402,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20190902042415067" modified="20190902042415067" title="$:/DefaultTiddlers">
-<pre>TableOfContents
-</pre>
+<div created="20190902042415067" modified="20190902063122116" title="$:/DefaultTiddlers">
+<pre>關於我們</pre>
 </div>
 <div plugin-type="import" status="pending" title="$:/Import" type="application/json">
 <pre>{
@@ -9391,16 +9418,34 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
+<div created="20190902063100159" modified="20190902063110551" title="$:/SiteSubtitle">
+<pre>一群奇耙工程師在幹很奇耙的事</pre>
+</div>
+<div created="20190902063047916" modified="20190902063056869" title="$:/SiteTitle">
+<pre>飆機器人wiki</pre>
+</div>
 <div created="20190902034724952" modified="20190902034724952" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20190902034218288" modified="20190902041257893" title="$:/state/tab/sidebar--595412856">
+<div created="20190902034218288" modified="20190902063544596" title="$:/state/tab/sidebar--595412856">
 <pre>TableOfContents</pre>
+</div>
+<div created="20190902063243287" modified="20190902063243287" title="$:/state/toc/TableOfContents-Arduino--118161433">
+<pre>open</pre>
 </div>
 <div created="20190902041305525" modified="20190902041310461" title="$:/state/toc/TableOfContents-New Tiddler 2--118161433">
 <pre>open</pre>
 </div>
-<div list="GettingStarted" title="$:/StoryList">
+<div created="20190902055126640" modified="20190902055126640" title="$:/state/toc/TableOfContents-New Tiddler 2-497309061">
+<pre>open</pre>
+</div>
+<div created="20190902063453345" modified="20190902063453345" title="$:/state/toc/TableOfContents/Arduino-開發板--118161433">
+<pre>open</pre>
+</div>
+<div created="20190902063400156" modified="20190902063400156" title="$:/state/toc/TableOfContents/Arduino-感測器--118161433">
+<pre>open</pre>
+</div>
+<div created="20190902063140918" list="" modified="20190902063540333" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9416,7 +9461,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///C:/Users/99robot/Downloads/empty%20(2).html&quot;
+            &quot;text&quot;: &quot;file:///C:/Users/99robot/Downloads/empty%20(2)%20(1).html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -9436,7 +9481,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/C:/Users/99robot/Downloads/empty%20(2).html&quot;
+            &quot;text&quot;: &quot;/C:/Users/99robot/Downloads/empty%20(2)%20(1).html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -9570,6 +9615,31 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div created="20190902063415453" modified="20190902063423868" tags="感測器" title="亮度、壓力感測">
+<pre></pre>
+</div>
+<div created="20190902063353149" modified="20190902063520417" tags="感測器" title="氣體感測">
+<pre>這是測試用的氣體感測頁面</pre>
+</div>
+<div created="20190902063334645" modified="20190902063341556" tags="Arduino" title="開發板">
+<pre></pre>
+</div>
+<div created="20190902063231437" modified="20190902063326599" tags="Arduino" title="感測器">
+<pre></pre>
+</div>
+<div created="20190902063403013" modified="20190902063408997" tags="感測器" title="溫溼度感測">
+<pre></pre>
+</div>
+<div created="20190902062840079" modified="20190902063033414" tags="" title="關於我們">
+<pre>我們是 ~PlayRobot 飆機器人_普特企業有限公司。提供您從國小到大專人工智慧物聯網 ~AIoT 的完整教學與應用。
+
+''產品''
+
+機器人／機電整合／物聯網／人工智慧的產品、課程與服務。</pre>
+</div>
+<div created="20190902040819439" modified="20190902063157445" tags="TableOfContents" title="Arduino">
+<pre></pre>
+</div>
 <div created="20190902042422926" modified="20190902042422926" title="GettingStarted">
 <pre>\define lingo-base() $:/language/ControlPanel/Basics/
 Welcome to ~TiddlyWiki and the ~TiddlyWiki community
@@ -9588,18 +9658,21 @@ Before you start storing important information in ~TiddlyWiki it is vital to mak
 See the [[control panel|$:/ControlPanel]] for more options.
 </pre>
 </div>
-<div created="20190902041304151" modified="20190902041307286" tags="[[New Tiddler 2]]" title="New Tiddler">
+<div created="20190902063438530" modified="20190902063451393" tags="開發板" title="Mega2560">
 <pre></pre>
 </div>
-<div created="20190902040819439" modified="20190902040821726" tags="TableOfContents" title="New Tiddler 2">
+<div created="20190902063542206" modified="20190902063606925" tags="TableOfContents" title="Raspberry Pi 3B+/4B">
 <pre></pre>
 </div>
-<div caption="目錄" created="20190902034120891" list-after="$:/core/ui/SideBar/Open" modified="20190902042357965" tags="$:/tags/SideBar" title="TableOfContents">
+<div caption="目錄" created="20190902034120891" list-after="$:/core/ui/SideBar/Open" modified="20190902055253232" tags="$:/tags/SideBar" title="TableOfContents">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
 &lt;&lt;toc-selective-expandable 'TableOfContents'&gt;&gt;
 
 &lt;/div&gt;</pre>
+</div>
+<div created="20190902063455177" modified="20190902063459393" tags="開發板" title="UNO">
+<pre></pre>
 </div>
 
 </div>
