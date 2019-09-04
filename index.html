@@ -431,6 +431,8 @@ Error message and password prompt
 
 <li>Arduino</li>
 
+<li>Draft of '人工智慧可以解決問題......並不是' by ckshadow</li>
+
 <li>Mega2560</li>
 
 <li>NVidia Jetson Nano Vs RPi4B</li>
@@ -13463,7 +13465,7 @@ Error message and password prompt
 <div created="20190902071420981" creator="c" modified="20190902071422190" modifier="ckshado" title="$:/status/UserName">
 <pre>ckshadow</pre>
 </div>
-<div created="20190903055941255" creator="ckshadow" list="" modified="20190903063131516" modifier="ckshadow" title="$:/StoryList">
+<div created="20190904061731985" creator="ckshadow" list="寫的短=寫得好？ [[Draft of '人工智慧可以解決問題......並不是' by ckshadow]] [[NVidia Jetson Nano Vs RPi4B]] 關於我們" modified="20190904061914865" modifier="ckshadow" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190902071432337" creator="ckshadow" modified="20190902071432337" modifier="ckshadow" title="$:/temp/advancedsearch">
@@ -13485,19 +13487,19 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///D:/%E7%A8%8B%E5%BC%8F%E7%A2%BC%E5%8D%80/wiki/index.html&quot;
+            &quot;text&quot;: &quot;https://ck951248.github.io/&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;ck951248.github.io&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;ck951248.github.io&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
-            &quot;text&quot;: &quot;file:&quot;
+            &quot;text&quot;: &quot;https:&quot;
         },
         &quot;$:/info/url/port&quot;: {
             &quot;title&quot;: &quot;$:/info/url/port&quot;,
@@ -13505,7 +13507,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/D:/%E7%A8%8B%E5%BC%8F%E7%A2%BC%E5%8D%80/wiki/index.html&quot;
+            &quot;text&quot;: &quot;/&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -13513,7 +13515,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;file://&quot;
+            &quot;text&quot;: &quot;https://ck951248.github.io&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
@@ -14575,7 +14577,7 @@ print([‘fizzbuzz’ if i%15==0 else ‘buzz’ if i%5 == 0 else ‘fizz’ if 
 <div created="20190902070721610" modified="20190902070722945" tags="感測器" title="溫溼度感測">
 <pre></pre>
 </div>
-<div created="20190903061725015" creator="ckshadow" modified="20190903063000038" modifier="ckshadow" tags="python學堂" title="寫的短=寫得好？">
+<div created="20190903061725015" creator="ckshadow" modified="20190904062027407" modifier="ckshadow" tags="python學堂" title="寫的短=寫得好？">
 <pre>原版：
 請連接7個LED燈至GPIO腳位，並讓LED燈從中間開始亮起，當亮滿之後則從外圍開始熄滅。程式需使用for迴圈取代窮舉控制，並以while迴圈包覆持續執行。時間間隔為兩秒，輸出如下所示：
 
@@ -14610,7 +14612,7 @@ for i in range(4)
     time.sleep(2)
 ```
 
-但我相信大家也知道，本教阿不是正常人，所以想辦法把它塞成一個：
+但我相信大家也知道，這邊的軟工不是正常人，所以想辦法把它塞成一個：
 
 ```python
 import time, RPi.GPIO as GPIO
@@ -14663,7 +14665,7 @@ GPIO.output(pin[3-(-1)**(i//4)*(i+i//4)%4], 1 - i//4)
 
 一般而言，印出一個菱形都會用二維陣列（串列），以座標點的方式搭配線性函數切割。那用這方法是不是就不用碰到函數了？
 
-於是本教阿就稍稍改動一下，確實可以：
+於是來稍稍改動一下，確實可以：
 
 ```python
 pin = [0,0,0,0,0,0,0]
@@ -14685,7 +14687,7 @@ for i in range(8):
 
 確實，我們只要輸出的話根本不用管串列這件事情。
 
-然後本教阿就寫出了一行文：
+於是有了下面這個完全沒有可讀性的一行文：
 
 ```python
 print(str([[0]*(i-3) + [1]*(2-(i-5)*2+1) + [0]*(i-3) if i&gt;3 else [0]*(2-i+1) + [1]*(i*2+1) + [0]*(2-i+1) for i in range(7)]).replace('], [','\n').replace('[','').replace(']',''))
@@ -14730,6 +14732,140 @@ print(str([[0]*(i-3) + [1]*(2-(i-5)*2+1) + [0]*(i-3) if i&gt;3 else [0]*(2-i+1) 
 &lt;&lt;toc-selective-expandable 'Arduino'&gt;&gt;
 
 &lt;/div&gt;</pre>
+</div>
+<div created="20190903063133262" creator="ckshadow" draft.of="人工智慧可以解決問題......並不是" draft.title="人工智慧可以解決問題......並不是" modified="20190904062111839" modifier="ckshadow" tags="python學堂" title="Draft of '人工智慧可以解決問題......並不是' by ckshadow" type="">
+<pre>本文情境參考：http://joelgrus.com/2016/05/23/fizz-buzz-in-tensorflow/
+
+我特別找到了這個範例（？）來說服大家，為什麼我們的智慧音箱課程不實作語音或者文字類的機器學習。
+
+這個故事大致上是這樣的：fizzbuzz是一個歐美國家的小遊戲，大家輪流數數字，當遇到3的倍數時則將數字改為念出fizz，遇到5的倍數時則改念buzz，遇到15的倍數時念fizzbuzz。這個遊戲在台灣我記得也有另外一個版本，但大致上就是這樣。
+
+後來他變成一個程式設計的練習題，用來熟悉for、if以及數學運算，其要求的輸出如下：
+
+```python
+[‘1’, ‘2’, ‘fizz’, ‘4’, ‘buzz’, ‘fizz’, ‘7’, ‘8’, ‘fizz’, ‘buzz’, ’11’, ‘fizz’, ’13’, ’14’, ‘fizzbuzz’, ’16’, ’17’, ‘fizz’, ’19’, ‘buzz’, ‘fizz’, ’22’, ’23’, ‘fizz’, ‘buzz’, ’26’, ‘fizz’, ’28’, ’29’, ‘fizzbuzz’, ’31’, ’32’, ‘fizz’, ’34’, ‘buzz’, ‘fizz’, ’37’, ’38’, ‘fizz’, ‘buzz’, ’41’, ‘fizz’, ’43’, ’44’, ‘fizzbuzz’, ’46’, ’47’, ‘fizz’, ’49’, ‘buzz’, ‘fizz’, ’52’, ’53’, ‘fizz’, ‘buzz’, ’56’, ‘fizz’, ’58’, ’59’, ‘fizzbuzz’, ’61’, ’62’, ‘fizz’, ’64’, ‘buzz’, ‘fizz’, ’67’, ’68’, ‘fizz’, ‘buzz’, ’71’, ‘fizz’, ’73’, ’74’, ‘fizzbuzz’, ’76’, ’77’, ‘fizz’, ’79’, ‘buzz’, ‘fizz’, ’82’, ’83’, ‘fizz’, ‘buzz’, ’86’, ‘fizz’, ’88’, ’89’, ‘fizzbuzz’, ’91’, ’92’, ‘fizz’, ’94’, ‘buzz’, ‘fizz’, ’97’, ’98’, ‘fizz’, ‘buzz’]
+```
+
+於是乎，有些公司也會拿來當成程式設計的面試題目，來檢查考生對程式語言的基本功及理解。才有了底下這個（不知道是不是真的）的故事：
+
+某個工程師……我們暫且稱呼他A君，到某家有名的科技公司應徵軟體工程師，而面試官就恰恰好考了這個問題。A君覺得有名科技公司還考這種題目簡直瞧不起人，於是用了機器學習繞了一大圈，揮舞了一整套路的牛刀砍死了一隻雞。
+
+在開始接下來的「故事」之前，身為一個好的python使用者，先引用好我們等等會碰到的東西：
+
+```python
+import numpy as np
+from keras.models import Sequential
+from keras.layers import Dense
+```
+
+首先，我們知道機器學習－－這種狀況應是分類問題，需要三個重點：特徵、分類對象、類別
+
+對數字來說特徵可以定義成他的二進制表示－－這省去了我們標準化的動作，且可以輕鬆的轉換出來。由於要求是1~100的fizzbuzz，我們就使用101到……4095作為訓練資料吧，剛好是12碼的二進碼：
+
+```python
+#定義編碼長度
+NUM_DIGITS = 12
+```
+
+首先我們寫一個函式來轉換二進制。這邊的二進碼必須一碼當一項特徵資料，以利我們後續直接送進神經網路：
+
+```python
+#轉成二進制數字
+def binary_encode(i, num_digits):
+       return np.array([i &gt;&gt; d &amp; 1 for d in range(num_digits)])
+```
+
+接著我們知道，分類對象就是1~4095這些數字，於是我們剩下定義類別。類別可以看出是四類：fizz、bizz、fizzbuzz以及以上皆非。四類問題我們直接使用onehot編碼，可以直接對應到神經網路的輸出層。
+
+接著來準備一下訓練資料，訓練資料為101~4095的數字：
+
+```python
+#訓練資料，生成12碼二進制數字（101~4095）
+train_data = np.array([binary_encode(i, NUM_DIGITS) for i in range(101, 2 ** NUM_DIGITS)])
+```
+
+有了資料，接著要為訓練資料標上標籤給機器學習，我們先定義一個拿到標籤的函式：
+
+```python
+#把輸出變成一次只激活一個細胞的標籤
+def fizz_buzz_encode(i):
+      if i % 15 == 0: return np.array([0, 0, 0, 1])
+      elif i % 5 == 0: return np.array([0, 0, 1, 0])
+      elif i % 3 == 0: return np.array([0, 1, 0, 0])
+      else: return np.array([1, 0, 0, 0])
+```
+
+呼叫他，建立訓練資料標籤的陣列：
+
+```python
+#資料標籤
+train_ans = np.array([fizz_buzz_encode(i) for i in range(101, 2 ** NUM_DIGITS)])
+```
+
+接著就來建我們的神經網路啦，因為我們比較菜，所以使用keras來一層一層建：
+
+```python
+#快樂的建立神經層吧
+model = Sequential()
+
+#輸入層，一顆對應一個編碼
+model.add(Dense(NUM_DIGITS,input_shape =(NUM_DIGITS,)))
+
+#隱藏層
+model.add(Dense(200, activation=’relu’))
+
+#輸出層，因為輸出是4類所以塞4顆，如果想製造自己的麻煩也可以用3顆去表達4種狀態……
+model.add(Dense(4, activation=’relu’))
+
+#看看我們的簡單網路堆疊成什麼樣子
+model.summary()
+
+#指定損失函數
+model.compile(loss=’mean_squared_error’, optimizer=’adam’, metrics=[‘accuracy’])
+```
+
+很快樂的建立完了，詳細的參數請看內部註解。接著就是訓練啦：
+
+```python
+#訓練的時間到了
+train_history = model.fit(x=train_data,y=train_ans, validation_split=0.2,epochs=200, batch_size=50, verbose=2)
+```
+
+好了，到這裡我們有了一個不錯的神經網路以及訓練完的模型，最後就是丟真實資料1~100給它分類看看，記得要把輸出改回fizzbuzz：
+
+```python
+#轉回fizzbuzz輸出
+label = {0:’none’,1:’fizz’,2:’buzz’,3:’fizzbuzz’}
+prediction = model.predict_classes(np.array([binary_encode(i, NUM_DIGITS) for i in range(1,101)]))
+index = 1
+for i in prediction:
+      print(index,label[i])
+      index += 1
+```
+
+正確率實行結果大概9成9，算是相當了不起的正確率，到這裡我們相信我們有了一個好方法來解決這個問題……才怪= =
+
+我們仔細回想一下，我們前面在生訓練資料時拿標籤的方法：
+
+```python
+def fizz_buzz_encode(i):
+      if i % 15 == 0: return np.array([0, 0, 0, 1])
+      elif i % 5 == 0: return np.array([0, 0, 1, 0])
+      elif i % 3 == 0: return np.array([0, 1, 0, 0])
+      else: return np.array([1, 0, 0, 0])
+```
+
+……直接把這邊丟1~100輸出不就好了嗎
+
+所以說，很多其實一眼可以看穿規則的東西，丟給機器學習，真的沒有必要－－比方說我們研習教學的文字分析系統。
+
+順便一提面試的正解應該是以下這樣：
+
+```python
+print([‘fizzbuzz’ if i%15==0 else ‘buzz’ if i%5 == 0 else ‘fizz’ if i%3 == 0 else str(i) for i in range(1,101)])
+```
+
+對，一行（O）</pre>
 </div>
 <div created="20190902070415283" modified="20190902070635122" tags="開發板" title="Mega2560">
 <pre>測試用子條目</pre>
