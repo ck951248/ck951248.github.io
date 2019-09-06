@@ -13473,8 +13473,8 @@ Error message and password prompt
 <div created="20190902070111626" creator="ckshadow" modified="20190905032111362" modifier="ckshadow" title="$:/state/tab/sidebar--595412856">
 <pre>TableOfContents</pre>
 </div>
-<div created="20190905032129803" creator="ckshadow" modified="20190905064255715" modifier="ckshadow" title="$:/state/toc/TableOfContents-自製產品--118161433">
-<pre>close</pre>
+<div created="20190905032129803" creator="ckshadow" modified="20190906003600559" modifier="ckshadow" title="$:/state/toc/TableOfContents-自製產品--118161433">
+<pre>open</pre>
 </div>
 <div created="20190903060149310" creator="ckshadow" modified="20190905032452859" modifier="ckshadow" title="$:/state/toc/TableOfContents-評測與比較--118161433">
 <pre>open</pre>
@@ -13509,7 +13509,7 @@ Error message and password prompt
 <div created="20190902071420981" creator="c" modified="20190902071422190" modifier="ckshado" title="$:/status/UserName">
 <pre>ckshadow</pre>
 </div>
-<div created="20190905063330429" creator="ckshadow" list="Python學堂 python之「禪」 Nano與他的環境建置 關於我們" modified="20190905063853685" modifier="ckshadow" title="$:/StoryList">
+<div created="20190906003934878" creator="ckshadow" list="即時翻譯介面 寵物系統介面 智慧音箱介面 即時控制介面 關於我們" modified="20190906011910570" modifier="ckshadow" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190902071432337" creator="ckshadow" modified="20190902071432337" modifier="ckshadow" title="$:/temp/advancedsearch">
@@ -14581,11 +14581,20 @@ print([‘fizzbuzz’ if i%15==0 else ‘buzz’ if i%5 == 0 else ‘fizz’ if 
 <div created="20190905032054396" creator="ckshadow" modified="20190905032109739" modifier="ckshadow" tags="TableOfContents" title="自製產品">
 <pre></pre>
 </div>
-<div created="20190905032311812" creator="ckshadow" modified="20190905032319315" modifier="ckshadow" tags="智慧機器人" title="即時控制介面">
-<pre></pre>
+<div created="20190905032311812" creator="ckshadow" modified="20190906010201507" modifier="ckshadow" tags="智慧機器人" title="即時控制介面">
+<pre>[img[https://i.imgur.com/QrcNNw1.png]]
+
+一個相當輕便的控制介面，透過鍵盤的WASD控制前後左右。（新版的為WASDX，S為靜止）
+
+點選Q退出程式（同時車子會恢復靜止）</pre>
 </div>
-<div created="20190905032331788" creator="ckshadow" modified="20190905032348810" modifier="ckshadow" tags="智慧機器人" title="即時翻譯介面">
-<pre></pre>
+<div created="20190905032331788" creator="ckshadow" modified="20190906012044755" modifier="ckshadow" tags="智慧機器人" title="即時翻譯介面">
+<pre>[img[https://i.imgur.com/PmzQfZ4.png]]
+
+透過GUI的按鈕，螢幕上顯示Recording之後說一句想要翻譯的話，電子紙會將目標語言顯示，並以語音念出。
+
+調整語系需使用人機介面右邊的下拉選單，支援8國語系（中英法德日意西韓）
+</pre>
 </div>
 <div created="20190902070657314" modified="20190902070702027" tags="感測器" title="亮度、壓力感測">
 <pre></pre>
@@ -14596,8 +14605,42 @@ print([‘fizzbuzz’ if i%15==0 else ‘buzz’ if i%5 == 0 else ‘fizz’ if 
 <div created="20190905032132925" creator="ckshadow" modified="20190905032146707" modifier="ckshadow" tags="自製產品" title="創客版AIoT智能音箱">
 <pre></pre>
 </div>
-<div created="20190905032301485" creator="ckshadow" modified="20190905032306811" modifier="ckshadow" tags="智慧機器人" title="智慧音箱介面">
-<pre></pre>
+<div created="20190905032301485" creator="ckshadow" modified="20190906011029612" modifier="ckshadow" tags="智慧機器人" title="智慧音箱介面">
+<pre>[img[https://i.imgur.com/ExNRpLC.png]]
+
+DEMO完整影片：
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/CJTbZL8qAnU&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+這是我們的智慧音箱介面，含有三個頁籤：執行頁面、全句對應、關鍵字。剛開啟的時候應該都會是這個執行頁面，為顯示執行狀態用途，包含一個喚醒按鈕，喚醒可使用按鈕，或是語音喚醒（預設為snowboy），後續語音辨識的結果和過程也都會顯示在這個頁面。
+
+[img[https://i.imgur.com/wyyDCwl.png]]
+
+第二個頁籤是全句對應頁面，負責制式的對應。當語音「完全符合」左側的句子時，系統以右邊的句子回應，透過下面的變更和刪除可以新增/移除對應句子。
+
+[img[https://i.imgur.com/yQ4nCWt.png]]
+
+第三個頁籤為關鍵字，負責編輯各種系統對應的關鍵字以及其動作，比方說寵物系統的寵物。左側的為第一關鍵字，用來辨識指令屬於哪個「對象」－－這個音箱系統會以對象管理關鍵字，比方說，小鳥和咖啡這兩個對象雖然都有前進這個關鍵字，但執行的行為不同。
+
+而右側的為第二關鍵字，也就是前面例子提到的「前進」之類，這種指向實體動作或回應的關鍵字。關鍵字請避免使用過長的詞，因斷詞後可能難以符合。
+
+而每個關鍵字可對應的動作有：
+
+|TTS語音回應|聽到關鍵字之後，以指定的訊息語音回應|
+|Mp3檔案播放|關鍵字與mp3檔名相同，會播放該mp3檔案|
+|.py檔案執行|關鍵字必須與py檔名相同，會執行.py檔案|
+|動作指令集|可以對機器人本體編輯動作|
+
+[img[https://i.imgur.com/7i4Sy79.png]]
+當定義的是動作指令時，會使用到右邊的視窗做動作編輯。可以從下拉選單選擇需要的動作，並給予使用者希望的持續時間、速度......等參數，新增之後可依靠右邊的箭號調整位置順序。
+
+變更完記得點選儲存指令集。
+
+使用時，先喚醒後，以「第一關鍵字」+「第二關鍵字」的方式下指令。
+
+例如：snowboy（語音喚醒），小鳥跳舞
+
+例如：（按下GUI的喚醒按鈕），小鳥說話</pre>
 </div>
 <div created="20190905032123964" creator="ckshadow" modified="20190905032418282" modifier="ckshadow" tags="自製產品" title="智慧機器人">
 <pre>[img[https://www.playrobot.com/6822-large_default/arduino-raspberry-pi-respeaker-python.jpg]]</pre>
@@ -14777,8 +14820,14 @@ print(str([[0]*(i-3) + [1]*(2-(i-5)*2+1) + [0]*(i-3) if i&gt;3 else [0]*(2-i+1) 
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20190905032322837" creator="ckshadow" modified="20190905032328499" modifier="ckshadow" tags="智慧機器人" title="寵物系統介面">
-<pre></pre>
+<div created="20190905032322837" creator="ckshadow" modified="20190906010907291" modifier="ckshadow" tags="智慧機器人" title="寵物系統介面">
+<pre>[img[https://i.imgur.com/pUUVTjq.png]]
+
+透過簡單的神經網路辨識鏡頭前面的手勢。
+
+但由於網路本身並沒有很大，因此可能需要對使用者的手勢圖像進行重新訓練。
+
+訓練方法我們後續會說明。</pre>
 </div>
 <div created="20190902071317101" creator="ckshadow" modified="20190905031943107" modifier="ckshadow" tags="" title="關於我們">
 <pre>我們是 PlayRobot 飆機器人_普特企業有限公司。提供您從國小到大專人工智慧物聯網 AIoT 的完整教學與應用。
