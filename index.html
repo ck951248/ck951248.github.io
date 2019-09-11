@@ -465,8 +465,6 @@ Error message and password prompt
 
 <li>Draft of 'Nano與他的環境建置' by ckshadow</li>
 
-<li>Draft of 'NVidia Jetson Nano Vs RPi4B' by ckshadow</li>
-
 <li>Mega2560</li>
 
 <li>Nano與他的記憶體</li>
@@ -13524,7 +13522,7 @@ Error message and password prompt
 <div created="20190902071420981" creator="c" modified="20190902071422190" modifier="ckshado" title="$:/status/UserName">
 <pre>ckshadow</pre>
 </div>
-<div created="20190911074057850" creator="ckshadow" list="[[Draft of 'NVidia Jetson Nano Vs RPi4B' by ckshadow]] 關於我們" modified="20190911074057850" modifier="ckshadow" title="$:/StoryList">
+<div created="20190911074057850" creator="ckshadow" list="[[NVidia Jetson Nano Vs RPi4B]] 關於我們" modified="20190911074057850" modifier="ckshadow" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190902071432337" creator="ckshadow" modified="20190902071432337" modifier="ckshadow" title="$:/temp/advancedsearch">
@@ -14999,148 +14997,6 @@ AI界目前的認知，大多認為非監督式比較接近真實智慧，我們
 <div modified="20190905061807347" modifier="ckshadow" title="Draft of 'Nano與他的環境建置' by ckshadow">
 <pre></pre>
 </div>
-<div created="20190902071251307" creator="ckshadow" draft.of="NVidia Jetson Nano Vs RPi4B" draft.title="NVidia Jetson Nano Vs RPi4B" modified="20190911074115924" modifier="ckshadow" tags="評測與比較" title="Draft of 'NVidia Jetson Nano Vs RPi4B' by ckshadow">
-<pre>| |Raspberry Pi 4B|NVIDIA Jetson Nano|
-|核心|四核ARM Cortex-A72 64位@ 1.5 Ghz|四核ARM Cortex-A57 64位@ 1.42 Ghz|
-|GPU|Broadcom VideoCore VI（32位）|NVIDIA Maxwell w / 128 CUDA核心@ 921 Mhz|
-|記憶體|4 GB LPDDR4 |4 GB LPDDR4|
-|網路|Gigabit Ethernet / Wifi 802.11ac|Gigabit Ethernet / M.2 Key E (for Wifi support)|
-|顯示輸出|2個micro-HDMI （最高4Kp60）|HDMI 2.0和eDP 1.4|
-|USB|2個USB 3.0,2個USB 2.0|4個USB 3.0，USB 2.0 Micro-B|
-|輸出入|40引腳GPIO|40引腳GPIO|
-|價錢|55美元|99美元|
-NVIDIA®JetsonNano™開發套件提供了以小尺寸，低功耗（低至5瓦特？）和低成本運行現代AI工作負載的性能。開發人員、學習者和製造者可以為圖像分類、對象檢測、分割和語音處理等應用程序運行AI框架和模型。
-
-......從表格上看起來是這樣啦。
-稍微查過資料的人應該都對Jetson Nano的吃電有所耳聞。
-
-我們可以充滿信心地告訴你－－對，這片板子TMD吃電……
-
-一般的5V2A不能支撐GPU完全啟動的消耗，會快樂的直接跳機給你看（？
-
-5V2A只是「能夠開機」的標準，如果只給這電量真的只能開機
-
-相對之下，Pi4使用5V2A的表現是相當穩定的，實際上他常駐使用電流大概才1A上下
-
-Jetson Nano推薦使用DC供電5V4A，供電量足以讓Nano全速衝MobileNet V2 SSD了
-
-以下的內容也是建立在5V4A供電下執行。
-
----------------------------------
-
-*記憶體
-大家都知道，Pi4給出了4GB的記憶體規格（可惜比以往的Pi3貴了一.....不少= =）。
-
-而Nano內建的記憶體也是4GB。
-
-看似相同，為什麼要獨立拉出來談這部分呢？
-
-－－因為同樣是4GB，開機之後使用free -h查看的量是天差地遠的。
-
-Pi4的系統本身大約會吃掉700MB記憶體上下，因此殘量大約為3.3GB；而Nano如果安裝的是原版未更動的系統的話，系統大約吃掉2.2GB，殘量約為1.7GB。
-
-……WTF，原來你的4GB是因為這樣給的嗎？
-
-很顯然這個結果不是令人很滿意，尤其是大多數記憶體被拿去維持NV那個華麗的桌面系統－－說實話，嵌入式裝置不太需要這麼華麗的桌面系統。我們建議將原本NV的桌面系統拆除，改裝上比較輕便的桌面系統LXDE，記憶體大概可以回到2.8GB水準，比較符合我們的期望。
-
----------------------------------
-
-*速度
-眾所周知的是，神經網路在跑第一次預測時花的時間最長，而牽涉到GPU系統的，由於必須分配GPU資源會花上更多時間。
-
-以MobileNetV2的標準流程來說：
-
-```python
-載入模型
-印出模型的summary
-影像前處理
-While迴圈
-    預測與輸出
-```
-
-如果，今天有這麼一位天兵，想要評測「第一次預測結果前模型的載入時間」，則會變成：
-
-```python
-載入模型
-印出模型的summary
-a = time.time()
-影像前處理
-預測與輸出
-print(time.time()-a)
-```
-
-順便一提這個流程我使用model MobileNetV2測出來的狀況是：
-
-1. Raspberry Pi 4 約 3.9 秒
-
-2. Jetson nano 約 19 秒
-
-......等等，先放下你準備扔出去的Nano。
-
-主要起因在於，NV分配GPU跟記憶體資源花了很多時間，但一般來說，任務不會頻繁的更動網路模型，也就是所謂的分配成本只需要經歷一次－－所以評估效能會以所謂的FPS來評估：
-
-```python
-載入模型
-印出模型的summary
-影像前處理
-While迴圈
-    a = time.time()
-    預測與輸出
-    print(time.time()-a)
-```
-
-以這個方式同樣使用MobileNetV2評估一分鐘之後：
-
-1. Raspberry Pi 4 約1FPS
-
-2. Jetson nano 約11FPS
-
-Nano還是快上不少的。
-
-相信有人會想觀察，神經棒Pi4和Nano哪個會比較快。
-
-很遺憾的，我們直到現在為止，都沒有辦法把「任意」符合神經棒規定層的神經網路轉移進去。
-如果只是單純跑別人的模型，那實用意義不大，Nano在這件事情上方便很多，模型並不需要改動，電腦怎麼寫就怎麼跑。
-
-但未來如果還要加速，或許需要做量化。
-
-----------------------------------------------------------------
-
-*IoT接口
-NV板設計的概念，看似像是一塊有GPU運算力的高階嵌入式板，而他的GPIO官方宣稱和Pi完全相同，但這句話滿多可以吐槽的點的……
-
-Pi系列的GPIO我相信大家都用得很開心，實際上除了軟體PWM不穩之外，也沒啥太大的瑕疵
-
-但NV板就不好說了
-
-首先，NV板並沒有軟體PWM，他只能切硬體PWM出來使用－－這個下一堆指令跟改檔的過程，新手玩家已經死成一片了（？
-
-其二，NV板的GPIO並不穩定。單純的點亮LED，他的亮度是會不穩定的……並且在不使用到5V4A前，GPIO不推薦使用
-
-其三，NV板即使光GPIO都需要使用super user執行，對於某些在su底下會怪怪的函式庫或資源而言，是很痛苦的事情
-
---------------------------------------------------------------------
-
-*總結
-初步使用這兩片板的心得
-
-Pi4和Pi3幾乎沒有操作手感上的差異，速度快上不少，體感來說非常好。
-
-可惜對AI運算並沒有很優秀的支援，需要外掛一些運算裝置（比方說神經棒或者coral之類）輔助
-或者是採取量化去壓縮運算量。
-
-另外他的mini HDMI非常討厭，一堆現有的線都接不上去
-
-......還有就是VNC進去的解析度有點異常（希望會修復）
-
-NV板自體可以跑神經網路，甚至訓練都有辦法執行。程式碼也不像要轉移到神經棒和coral之類需要額外學習轉換和處理一些不兼容的層，而是原本怎麼寫，在NV上面就同樣跑就好－－GPU什麼的，系統會自己想辦法。
-
-缺點就是太吃電跟會發熱（很明顯，非常明顯），且硬體方面還有一些改進點：比如說wifi以及GPIO的瑕疵。
-
-總的來看，如果你時間緊迫，沒辦法去花大把時間實驗轉換神經棒或Coral格式的方法，那NV板是很好的選擇（實際上價格比Pi4+NCS2便宜一點）。而且CUDA類的操作NV板幾乎通吃，對以後部署大型任務比起練神經棒好一點，且NV板未來的上限可以更高（把那些詭異的東西修好的話）
-
-如果你已經是Pi的熟練用戶，且時間充裕。不妨實驗一下NCS2或Coral的做法，比起買一片新板便宜一點，且IoT類的支援非常的多，想做一些專題類的肯定會方便不少</pre>
-</div>
 <div created="20190902070415283" modified="20190902070635122" tags="開發板" title="Mega2560">
 <pre>測試用子條目</pre>
 </div>
@@ -15264,7 +15120,7 @@ sudo nano /etc/fstab
 <div created="20190905002541459" creator="ckshadow" modified="20190905002620929" modifier="ckshadow" tags="TableOfContents" title="NVidia Jetson Nano">
 <pre>我知道這塊板很強，但他還能更強一點</pre>
 </div>
-<div created="20190902071251307" creator="ckshadow" modified="20190911073120121" modifier="ckshadow" tags="評測與比較" title="NVidia Jetson Nano Vs RPi4B">
+<div created="20190902071251307" creator="ckshadow" modified="20190911074247881" modifier="ckshadow" tags="評測與比較" title="NVidia Jetson Nano Vs RPi4B">
 <pre>| |Raspberry Pi 4B|NVIDIA Jetson Nano|
 |核心|四核ARM Cortex-A72 64位@ 1.5 Ghz|四核ARM Cortex-A57 64位@ 1.42 Ghz|
 |GPU|Broadcom VideoCore VI（32位）|NVIDIA Maxwell w / 128 CUDA核心@ 921 Mhz|
@@ -15274,9 +15130,9 @@ sudo nano /etc/fstab
 |USB|2個USB 3.0,2個USB 2.0|4個USB 3.0，USB 2.0 Micro-B|
 |輸出入|40引腳GPIO|40引腳GPIO|
 |價錢|55美元|99美元|
-NVIDIA®JetsonNano™開發套件提供了以小尺寸，低功耗（低至5瓦特）和低成本運行現代AI工作負載的性能。開發人員、學習者和製造者可以為圖像分類、對象檢測、分割和語音處理等應用程序運行AI框架和模型。
+NVIDIA®JetsonNano™開發套件提供了以小尺寸，低功耗（低至5瓦特？）和低成本運行現代AI工作負載的性能。開發人員、學習者和製造者可以為圖像分類、對象檢測、分割和語音處理等應用程序運行AI框架和模型。
 
-......從圖片上看起來是這樣啦。
+......從表格上看起來是這樣啦。
 稍微查過資料的人應該都對Jetson Nano的吃電有所耳聞。
 
 我們可以充滿信心地告訴你－－對，這片板子TMD吃電……
